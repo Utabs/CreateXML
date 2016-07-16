@@ -24,7 +24,7 @@ public class WriteXML {
             List<PersonTO> personTOs = new ArrayList<PersonTO>();
             for (int i = 0; i < 10; i++) {
                 PersonTO personTO = new PersonTO();
-                personTO.setName("امین" + i);
+                personTO.setName("amin" + i);
                 personTO.setBirthdate("13950505");
                 personTO.setIssue_number("040563233610");
                 personTO.setLast_name("rafie" + i);
