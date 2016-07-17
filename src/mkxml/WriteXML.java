@@ -6,7 +6,6 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;

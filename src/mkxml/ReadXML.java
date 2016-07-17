@@ -1,11 +1,9 @@
 package mkxml;
-
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.input.SAXBuilder;
-
 import java.io.File;
-import java.util.List;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+
 
 /**
  * Created by amrafiee on 7/16/2016.
@@ -13,26 +11,17 @@ import java.util.List;
 public class ReadXML {
     public ReadXML() {
         try {
-            SAXBuilder builder = new SAXBuilder();
-            File xmlFile = new File("d:\\file.xml");
-            Document document = (Document) builder.build(xmlFile);
-            Element rootNode = document.getRootElement();
-
-            List list = rootNode.getChildren("header");
-
-            for (int i = 0; i < list.size(); i++) {
-                System.out.println( i);
-                Element node = (Element) list.get(i);
-
-                System.out.println("persons is : " + node.getChildText("person"));
-
-
+            try {
+                File inputFile = new File("D:\\file.xml");
+                SAXParserFactory factory = SAXParserFactory.newInstance();
+                SAXParser saxParser = factory.newSAXParser();
+                UserHandler userhandler = new UserHandler();
+                saxParser.parse(inputFile, userhandler);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
-
-
     }
-
 }
